@@ -2,7 +2,7 @@
 
 This is a selenium hybrid framework that uses TestNG, page object model, extent spark report, and Apache POI for test automation.
 
-#Features
+# Features
 
 Uses Selenium WebDriver to automate web browsers.
 
