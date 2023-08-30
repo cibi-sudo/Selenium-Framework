@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
+import javax.lang.model.util.Elements;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -38,7 +39,6 @@ public class helper {
         base64 = ts.getScreenshotAs(OutputType.BASE64);
         return base64;
     }
-
     public static void captureScreenshot(WebDriver driver) {
         try {
             TakesScreenshot ts = (TakesScreenshot) driver;
@@ -65,24 +65,23 @@ public class helper {
         return new SimpleDateFormat("HH_mm_ss_dd_MM_yyyy").format(new Date());
     }
 
-    public static boolean elementToBeDisplayed(By locator) {
-        return driver.findElement(locator).isDisplayed();
+    public static boolean elementToBeDisplayed(WebElement element) {
+        return element.isDisplayed();
     }
 
-    public static void elementClick(By locator) {
-        driver.findElement(locator).click();
+    public static void elementClick(WebElement element) {
+        element.click();
     }
 
-    public static void sendText(By locator, String string) {
-        WebElement element = driver.findElement(locator);
+    public static void sendText(WebElement element, String string) {
         element.click();
         element.clear();
         element.sendKeys(string);
     }
 
-    public static void waitForElement(By locator) {
+    public static void waitForElement(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(explicittime));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public static void acceptAlert() {
@@ -110,9 +109,8 @@ public class helper {
         act.doubleClick().build().perform();
     }
 
-    public static int elementCount(By locator){
-        List<WebElement> elements = driver.findElements(locator);
-        return elements.size();
+    public static int elementCount(List<WebElement> element){
+            return element.size();
     }
 
 }

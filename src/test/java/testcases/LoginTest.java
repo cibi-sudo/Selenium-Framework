@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.loginPage;
-import dataprovider.dataProvider;
+import dataproviders.dataProvider;
 
 
 public class LoginTest extends base {
