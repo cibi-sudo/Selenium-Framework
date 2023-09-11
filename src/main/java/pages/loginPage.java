@@ -12,13 +12,13 @@ import java.util.List;
 public class loginPage {
     WebDriver driver;
     @FindBy(id = "email1")
-    private WebElement usernameField;
+    public static WebElement usernameField;
     @FindBy(name = "password1")
-    private WebElement passwordField;
+    public static WebElement passwordField;
     @FindBy(xpath ="//button[@class='submit-btn']")
-    private WebElement loginButton;
+    public static WebElement loginButton;
     @FindBy(xpath = "//div[@class='social-btns']//a")
-    private List<WebElement> icons;
+    public static List<WebElement> icons;
 
     public loginPage(WebDriver driver) {
         this.driver = driver;
