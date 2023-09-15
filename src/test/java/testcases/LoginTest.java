@@ -1,26 +1,27 @@
 package testcases;
 
 
-import base.base;
-import browserfactory.browser;
+import base.Base;
+import browserfactory.Browser;
+import dataproviders.DataProviders;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.loginPage;
-import dataproviders.dataProvider;
-import utility.configFailedCase;
+import pages.LoginPage;
+import utility.ConfigFailedCase;
 
 
-public class LoginTest extends base {
+public class LoginTest extends Base {
 
-    @Test(priority = 1,retryAnalyzer = configFailedCase.class)
-    public void checkMediaIcons(){
-        loginPage login = PageFactory.initElements(browser.getDriver(), loginPage.class);
-        Assert.assertEquals(4,login.countIcons());
+    @Test(priority = 1, retryAnalyzer = ConfigFailedCase.class)
+    public void checkMediaIcons() {
+        LoginPage login = PageFactory.initElements(Browser.getDriver(), LoginPage.class);
+        Assert.assertEquals(4, login.countIcons());
     }
-    @Test(dataProvider = "login-data",dataProviderClass= dataProvider.class,priority = 2,retryAnalyzer = configFailedCase.class)
+
+    @Test(dataProvider = "login-data", dataProviderClass = DataProviders.class, priority = 2, retryAnalyzer = ConfigFailedCase.class)
     public void loginApplication(String username, String password) {
-        loginPage login = PageFactory.initElements(browser.getDriver(), loginPage.class);
+        LoginPage login = PageFactory.initElements(Browser.getDriver(), LoginPage.class);
         login.logintoApplication(username, password);
     }
 }

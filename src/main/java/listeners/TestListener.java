@@ -1,6 +1,6 @@
 package listeners;
 
-import browserfactory.browser;
+import browserfactory.Browser;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -8,9 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import utility.helper;
+import utility.Helper;
 
-public class testListener implements ITestListener {
+public class TestListener implements ITestListener {
     ExtentReports extent = ExtentManager.getInstance();
     ThreadLocal<ExtentTest> parentTest = new ThreadLocal<ExtentTest>();
 
@@ -24,8 +24,8 @@ public class testListener implements ITestListener {
     }
 
     public void onTestFailure(ITestResult result) {
-        WebDriver driver = browser.getDriver();
-        String base64 = helper.captureScreenshotinbase64(driver);
+        WebDriver driver = Browser.getDriver();
+        String base64 = Helper.captureScreenshotinbase64(driver);
         parentTest.get().fail("Test failed " + result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromBase64String(base64).build());
     }
 

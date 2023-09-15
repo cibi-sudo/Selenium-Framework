@@ -3,7 +3,7 @@ package utility;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
-public class configFailedCase implements IRetryAnalyzer {
+public class ConfigFailedCase implements IRetryAnalyzer {
     private int min = 0;
     private int max = 3;
     @Override

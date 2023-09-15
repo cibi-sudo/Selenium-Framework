@@ -3,11 +3,11 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utility.helper;
+import utility.Helper;
 
 import java.util.List;
 
-public class loginPage {
+public class LoginPage {
     @FindBy(id = "email1")
     public static WebElement usernameField;
     @FindBy(name = "password1")
@@ -18,19 +18,19 @@ public class loginPage {
     public static List<WebElement> icons;
     WebDriver driver;
 
-    public loginPage(WebDriver driver) {
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
-        helper.setDriver(driver);
+        Helper.setDriver(driver);
 
     }
 
     public int countIcons() {
-        return helper.elementCount(icons);
+        return Helper.elementCount(icons);
     }
 
     public void logintoApplication(String username, String password) {
-        helper.sendText(usernameField, username);
-        helper.sendText(passwordField, password);
-        helper.elementClick(loginButton);
+        Helper.sendText(usernameField, username);
+        Helper.sendText(passwordField, password);
+        Helper.elementClick(loginButton);
     }
 }

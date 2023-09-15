@@ -9,16 +9,16 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
-import utility.configReader;
-import utility.helper;
+import utility.ConfigReader;
+import utility.Helper;
 
 import java.time.Duration;
 import java.util.Properties;
 
-public class browser {
+public class Browser {
     @Getter
     static WebDriver driver;
-    static Properties prop = new configReader().intializeProperties();
+    static Properties prop = new ConfigReader().intializeProperties();
 
     public static WebDriver initializeBrowser(String browserName) {
 
@@ -48,8 +48,8 @@ public class browser {
         }
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(helper.pageloadouttime));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(helper.implicittime));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Helper.pageloadouttime));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Helper.implicittime));
         return driver;
     }
 

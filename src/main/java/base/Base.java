@@ -1,19 +1,19 @@
 package base;
 
-import browserfactory.browser;
+import browserfactory.Browser;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
-import utility.configReader;
+import utility.ConfigReader;
 
 import java.util.Properties;
 
-public class base {
+public class Base {
     public WebDriver driver;
 
     @BeforeMethod
     public void browserSetup(){
-        Properties prop = new configReader().intializeProperties();
-        driver = browser.initializeBrowser(prop.getProperty("browser"));
+        Properties prop = new ConfigReader().intializeProperties();
+        driver = Browser.initializeBrowser(prop.getProperty("browser"));
         driver.get(prop.getProperty("url"));
     }
     @AfterMethod

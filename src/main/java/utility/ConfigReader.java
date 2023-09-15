@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-public class configReader {
+public class ConfigReader {
     public Properties intializeProperties() {
 
         Properties prop = new Properties();

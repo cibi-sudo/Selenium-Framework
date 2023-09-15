@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-import javax.lang.model.util.Elements;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -15,11 +14,11 @@ import java.time.Duration;
 import java.util.Date;
 import java.util.List;
 
-public class helper {
+public class Helper {
     static WebDriver driver;
 
     public static void setDriver(WebDriver driver) {
-        helper.driver = driver;
+        Helper.driver = driver;
     }
 
     public static int pageloadouttime = 20;
