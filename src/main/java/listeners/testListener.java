@@ -26,11 +26,11 @@ public class testListener implements ITestListener {
     public void onTestFailure(ITestResult result) {
         WebDriver driver = browser.getDriver();
         String base64 = helper.captureScreenshotinbase64(driver);
-        parentTest.get().fail("Test failed" + result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromBase64String(base64).build());
+        parentTest.get().fail("Test failed " + result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromBase64String(base64).build());
     }
 
     public void onTestSkipped(ITestResult result) {
-        parentTest.get().skip("Test skipped" + result.getThrowable().getMessage());
+        parentTest.get().skip("Test skipped " + result.getThrowable().getMessage());
     }
 
     public void onFinish(ITestContext context) {

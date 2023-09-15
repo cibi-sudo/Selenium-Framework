@@ -5,9 +5,14 @@
         <listener class-name="listeners.testListener"/>
     </listeners>
     <test verbose="2" preserve-order="true"
-          name="Logintest.java" parallel="classes" thread-count="2">
+          name="login-page-test">
         <classes>
-            <class name="testcases.LoginTest"/>
+            <class name="testcases.LoginTest">
+                <methods>
+                    <include name="checkMediaIcons"/>
+                    <include name="loginApplication"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
