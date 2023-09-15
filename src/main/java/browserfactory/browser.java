@@ -1,5 +1,6 @@
 package browserfactory;
 
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,6 +16,7 @@ import java.time.Duration;
 import java.util.Properties;
 
 public class browser {
+    @Getter
     static WebDriver driver;
     static Properties prop = new configReader().intializeProperties();
 
@@ -51,7 +53,4 @@ public class browser {
         return driver;
     }
 
-    public static WebDriver getDriver() {
-        return driver;
-    }
 }
