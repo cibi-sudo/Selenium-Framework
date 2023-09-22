@@ -1,6 +1,6 @@
-# Selenium-Hybrid-Framework
+# Selenium-Framework
 
-This is a selenium hybrid framework that uses TestNG, page object model, extent spark report, and Apache POI for test automation.
+This is a selenium framework that uses TestNG, page object model, extent spark report, and Apache POI for test automation.
 
 # Features
 
